@@ -1,0 +1,41 @@
+name: NeoProfessions
+author: Neoblade298
+main: me.Neoblade298.NeoProfessions.Professions
+version: 1.0
+api-version: 1.16
+depend: [MythicMobs, SkillAPI, NeoGear, NeoCore, Vault]
+softdepend: [NeoRelics, NeoMythicExtension, mcMMO, NeoResearch, Multiverse-Core, NeoConsumables]
+commands:
+  prof:
+    description: Main command
+    usage: /prof [args]
+  profs:
+    description: View exp command
+    usage: /profs [args]
+  evouch:
+    description: Evouch command
+    usage: /evouch [args]
+  epay:
+    description: Epay command
+    usage: /epay [args]
+  ebal:
+    description: Epay command
+    usage: /ebal [args]
+  egive:
+    description: Egive command
+    usage: /evouch [args]
+  etake:
+    description: Etake command
+    usage: /epay [args]
+  eset:
+    description: Eset command
+    usage: /epay [args]
+  gardens:
+    description: Gardens command
+    usage: /gardens
+  craft:
+    description: Craft command
+    usage: /craft
+  inv:
+    description: Inv command
+    usage: /inv

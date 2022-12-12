@@ -306,16 +306,20 @@ public class ProfCommand implements CommandExecutor {
 						ItemStack item = augment.getItem(p);
 						item.setAmount(amt);
 						p.getInventory().addItem(item);
+						Bukkit.getLogger().info("[NeoProfessions] User " + sender.getName() + " successfully spawned " + augment.getLine() + " for player " + p.getName());
 						Util.sendMessage(sender, "&7Successfully gave " + augment.getLine() + " §7to " + p.getName() + "!");
 					}
 					else if (type.equalsIgnoreCase("repair")) {
 						ItemStack item = getRepairItem(lv);
 						item.setAmount(amt);
 						p.getInventory().addItem(item);
+						Bukkit.getLogger().info("[NeoProfessions] User " + sender.getName() + " successfully spawned " + amt + " Lv " + lv + " repairs for player " + p.getName());
 						Util.sendMessage(sender, "&7Successfully gave " + amt + " Lv " + lv + " repairs to " + p.getName() + "!");
 					}
 					else if (type.equalsIgnoreCase("item")) {
 						StorageManager.givePlayer(p, id, amt);
+						Bukkit.getLogger().info("[NeoProfessions] User " + sender.getName() + " successfully spawned " + amt + " " + StorageManager.getItem(id).getDisplay()
+								+ " for player " + p.getName());
 						Util.sendMessage(sender, "&7Successfully gave " + amt + " " + StorageManager.getItem(id).getDisplay() +
 								" to " + p.getName() + "!");
 					}

@@ -53,6 +53,7 @@ import me.neoblade298.neorelics.Relic;
 
 public class AugmentManager implements Listener, Manager {
 	static Professions main = null;
+	public static final double PVP_MULTIPLIER = 0.3;
 	private static HashMap<String, Augment> augmentMap = new HashMap<String, Augment>();
 	private static FileLoader droptableLoader;
 	
@@ -509,6 +510,7 @@ public class AugmentManager implements Listener, Manager {
 					FlagManager.addFlag(p, e.getCaster(), flag.getFlag(), flag.getDuration());
 				}
 				if (thorns > 0) {
+					if (e.getTarget() instanceof Player) thorns *= PVP_MULTIPLIER;
 					e.getTarget().damage(thorns, p);
 				}
 			}

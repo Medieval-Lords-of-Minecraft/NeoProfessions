@@ -208,11 +208,6 @@ public class GardenManager implements IOComponent, Manager {
 		return fertilizers.get(id);
 	}
 	
-	@Override
-	public String getKey() {
-		return "GardenManager";
-	}
-	
 	public static void addPlayerGardening(Player p, ProfessionType type) {
 		playersGardening.put(p.getUniqueId(), type);
 	}

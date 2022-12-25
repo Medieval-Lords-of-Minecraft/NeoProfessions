@@ -118,11 +118,6 @@ public class ProfessionManager implements IOComponent, Manager {
 		return accounts.get(uuid);
 	}
 	
-	@Override
-	public String getKey() {
-		return "ProfessionManager";
-	}
-	
 	public static void convertPlayer(UUID uuid, HashMap<ProfessionType, Profession> profs, Statement stmt) {
 		try {
 			for (Entry<ProfessionType, Profession> entry : profs.entrySet()) {

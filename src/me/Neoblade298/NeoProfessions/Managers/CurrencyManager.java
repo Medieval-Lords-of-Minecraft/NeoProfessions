@@ -212,11 +212,6 @@ public class CurrencyManager implements IOComponent, Listener, Manager {
 		}
 	}
 	
-	@Override
-	public String getKey() {
-		return "CurrencyManager";
-	}
-	
 	// Used only for converting
 	public static void convertPlayer(UUID uuid, HashMap<Integer, Integer> essences, Statement stmt) {
 		try {

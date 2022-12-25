@@ -248,11 +248,6 @@ public class StorageManager implements IOComponent, Listener, Manager {
 		}
 	}
 	
-	@Override
-	public String getKey() {
-		return "StorageManager";
-	}
-	
 	public static void addSource(int id, String source, boolean isMob) {
 		if (itemsLoaded) {
 			if (items.containsKey(id)) {

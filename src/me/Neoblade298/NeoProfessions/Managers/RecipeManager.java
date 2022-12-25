@@ -255,11 +255,6 @@ public class RecipeManager implements IOComponent, Listener, Manager {
 		return knowledge.get(p.getUniqueId());
 	}
 	
-	@Override
-	public String getKey() {
-		return "RecipeManager";
-	}
-	
 	public static List<String> getRecipeList(String key) {
 		return recipeLists.get(key);
 	}

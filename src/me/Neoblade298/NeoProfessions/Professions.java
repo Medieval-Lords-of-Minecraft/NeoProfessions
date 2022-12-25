@@ -82,7 +82,7 @@ public class Professions extends JavaPlugin implements Listener {
 		sm = new StorageManager(this);
 		getServer().getPluginManager().registerEvents(sm, this);
 		managers.add(sm);
-		IOManager.register(this, sm);
+		IOManager.register(this, sm, "StorageManager");
 			
 		if (!isInstance) {
 			// Managers and listeners
@@ -100,10 +100,10 @@ public class Professions extends JavaPlugin implements Listener {
 			getServer().getPluginManager().registerEvents(cm, this);
 			getServer().getPluginManager().registerEvents(rm, this);
 			getServer().getPluginManager().registerEvents(mim, this);
-			IOManager.register(this, cm);
-			IOManager.register(this, pm);
-			IOManager.register(this, rm);
-			IOManager.register(this, gm);
+			IOManager.register(this, cm, "EssenceManager");
+			IOManager.register(this, pm, "ProfessionManager");
+			IOManager.register(this, rm, "RecipeManager");
+			IOManager.register(this, gm, "GardenManager");
 	
 			// Command listeners for all classes
 			this.getCommand("ebal").setExecutor(new EssenceBalanceCommand(this));

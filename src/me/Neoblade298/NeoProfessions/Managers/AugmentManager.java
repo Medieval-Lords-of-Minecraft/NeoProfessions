@@ -450,7 +450,6 @@ public class AugmentManager implements Listener, Manager {
 		double posmult = e.getPosmult();
 		double negmult = e.getNegmult();
 		double flat = e.getFlat();
-		double thorns = 0;
 		FlagSettings flag = null;
 		if (containsType(e.getTypes(), "DAMAGE", "SKILL_DAMAGE")) {
 			// Don't buff damage towards yourself
@@ -481,6 +480,7 @@ public class AugmentManager implements Listener, Manager {
 			}
 		}
 		else if (containsType(e.getTypes(), "DEFENSE", "SKILL_DEFENSE")) {
+			double thorns = 0;
 			if (containsAugments(p, EventType.DAMAGE_TAKEN)) {
 				for (Augment augment : AugmentManager.playerAugments.get(p).getAugments(EventType.DAMAGE_TAKEN)) {
 					if (augment instanceof ModDamageTakenAugment) {
@@ -505,11 +505,11 @@ public class AugmentManager implements Listener, Manager {
 					}
 				}
 				// basically just for thorns
-				if (thorns > 0) {
-					e.getTarget().damage(thorns, p);
-				}
 				if (flag != null) {
 					FlagManager.addFlag(p, e.getCaster(), flag.getFlag(), flag.getDuration());
+				}
+				if (thorns > 0) {
+					e.getTarget().damage(thorns, p);
 				}
 			}
 		}

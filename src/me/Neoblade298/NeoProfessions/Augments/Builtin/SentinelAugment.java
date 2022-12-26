@@ -43,7 +43,7 @@ public class SentinelAugment extends Augment implements ModDamageDealtAugment {
 	@Override
 	public double getDamageDealtFlat(LivingEntity user, PlayerCalculateDamageEvent e) {
 		double damage = user.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue() * getHealthMod();
-		if (e.getTarget() instanceof Player) damage *= AugmentManager.PVP_MULTIPLIER;
+		if (e != null && e.getTarget() instanceof Player) damage *= AugmentManager.PVP_MULTIPLIER;
 		return damage;
 	}
 

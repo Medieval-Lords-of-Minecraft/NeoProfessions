@@ -117,6 +117,7 @@ public class Professions extends JavaPlugin implements Listener {
 			this.getCommand("gardens").setExecutor(new GardensCommand(this));
 			this.getCommand("craft").setExecutor(new CraftCommand(this));
 			this.getCommand("inv").setExecutor(new InvCommand(this));
+			this.getCommand("value").setExecutor(new ValueCommand(this));
 		}
 	}
 	

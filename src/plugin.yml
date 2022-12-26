@@ -39,3 +39,6 @@ commands:
   inv:
     description: Inv command
     usage: /inv
+  value:
+    description: Value command
+    usage: /value

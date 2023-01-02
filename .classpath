@@ -14,6 +14,7 @@
 	<classpathentry kind="lib" path="src/NeoCore.jar"/>
 	<classpathentry kind="lib" path="src/MythicMobs-5.0.3-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="src/NeoRelics.jar"/>
+	<classpathentry kind="lib" path="src/NeoSAPIAddons.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>

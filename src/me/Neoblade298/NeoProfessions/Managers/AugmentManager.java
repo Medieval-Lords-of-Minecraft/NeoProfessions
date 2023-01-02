@@ -50,6 +50,7 @@ import me.neoblade298.neomythicextension.events.ChestDropEvent;
 import me.neoblade298.neomythicextension.events.MythicResearchPointsChanceEvent;
 import me.neoblade298.neorelics.NeoRelics;
 import me.neoblade298.neorelics.Relic;
+import me.neoblade298.neosapiaddons.AddShieldsEvent;
 
 public class AugmentManager implements Listener, Manager {
 	static Professions main = null;
@@ -127,6 +128,7 @@ public class AugmentManager implements Listener, Manager {
 		augmentMap.put("ferocious", new FerociousAugment());
 		augmentMap.put("final light", new FinalLightAugment());
 		augmentMap.put("finisher", new FinisherAugment());
+		augmentMap.put("fortitude", new FortitudeAugment());
 		augmentMap.put("ghosts of the past", new GhostsOfThePastAugment());
 		augmentMap.put("guardian", new GuardianAugment());
 		augmentMap.put("hammer time", new HammerTimeAugment());
@@ -161,9 +163,11 @@ public class AugmentManager implements Listener, Manager {
 		augmentMap.put("spectre", new SpectreAugment());
 		augmentMap.put("spellweaving", new SpellweavingAugment());
 		augmentMap.put("steadfast", new SteadfastAugment());
+		augmentMap.put("sturdy", new SturdyAugment());
 		augmentMap.put("sundering", new SunderingAugment());
 		augmentMap.put("tenacity", new TenacityAugment());
 		augmentMap.put("thorns", new ThornsAugment());
+		augmentMap.put("titan", new TitanAugment());
 		augmentMap.put("torrent", new TorrentAugment());
 		augmentMap.put("underdog", new UnderdogAugment());
 		augmentMap.put("vampiric", new VampiricAugment());
@@ -760,6 +764,34 @@ public class AugmentManager implements Listener, Manager {
 			}
 		}
 		e.setAmount(e.getAmount() * multiplier + flat);
+	}
+	
+	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true) 
+	public void onShieldGain(AddShieldsEvent e) {
+		Player p = e.getTarget();
+		double gainMult = 1;
+		double durationMult = 1;
+		if (containsAugments(p, EventType.SHIELDS)) {
+			for (Augment augment : AugmentManager.playerAugments.get(p).getAugments(EventType.SHIELDS)) {
+				if (augment instanceof ModShieldsAugment) {
+					ModShieldsAugment aug = (ModShieldsAugment) augment;
+					if (aug.canUse(p, e)) {
+						aug.applyShieldEffects(p, e);
+						
+						gainMult += aug.getShieldsGainMult(p);
+						durationMult += aug.getShieldsDurationMult(p);
+					}
+				}
+			}
+		}
+		if (gainMult != 1) {
+			e.setAmount(e.getAmount() * gainMult);
+			e.setDecayAmount(e.getDecayAmount() * gainMult);
+		}
+		if (durationMult != 1) {
+			e.setDecayDelay(e.getDecayDelay() * durationMult);
+			e.setDecayPeriod(e.getDecayPeriod() * durationMult);
+		}
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)

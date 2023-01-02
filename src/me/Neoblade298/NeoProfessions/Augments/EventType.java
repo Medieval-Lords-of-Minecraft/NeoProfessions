@@ -21,5 +21,6 @@ public enum EventType {
 	SKILL_CAST,
 	INIT,
 	CLEANUP,
+	SHIELDS,
 	INTERACT;
 }

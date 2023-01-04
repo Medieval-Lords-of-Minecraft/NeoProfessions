@@ -44,7 +44,7 @@ public class FortitudeAugment extends Augment implements ModShieldsAugment {
 		ItemMeta meta = item.getItemMeta();
 		List<String> lore = meta.getLore();
 		lore.add("§7Increases duration of shields you");
-		lore.add("§7give by §f" + formatPercentage(getShieldsGainMult(user)) + "%§7.");
+		lore.add("§7give by §f" + formatPercentage(getShieldsDurationMult(user)) + "%§7.");
 		meta.setLore(lore);
 		item.setItemMeta(meta);
 		return item;

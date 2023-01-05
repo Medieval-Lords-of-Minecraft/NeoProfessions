@@ -31,7 +31,7 @@ public class IntimidatingAugment extends Augment implements ModDamageDealtAugmen
 	}
 	
 	private double getThreatMultiplier() {
-		return threatMult * (threatMultLvl * ((level / 5) - 1));
+		return threatMult + (threatMultLvl * ((level / 5) - 1));
 	}
 
 	@Override

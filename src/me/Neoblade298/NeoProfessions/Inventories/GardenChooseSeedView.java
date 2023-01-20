@@ -98,7 +98,7 @@ public class GardenChooseSeedView extends ProfessionInventory {
 			return;
 		}
 		final Player p = (Player) e.getWhoClicked();
-		final int slot = e.getRawSlot();
+		final int slot = e.getSlot();
 		
 		if (slot == BACK_BUTTON) {
 			new GardenInventory(p, type);

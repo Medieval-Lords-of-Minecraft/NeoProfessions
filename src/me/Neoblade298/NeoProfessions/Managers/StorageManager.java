@@ -28,9 +28,9 @@ import me.Neoblade298.NeoProfessions.Events.ReceiveStoredItemEvent;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.Objects.StoredItemSource;
 import me.Neoblade298.NeoProfessions.Storage.StoredItem;
-import me.neoblade298.neocore.NeoCore;
-import me.neoblade298.neocore.io.IOComponent;
-import me.neoblade298.neocore.player.PlayerFields;
+import me.neoblade298.neocore.bukkit.NeoCore;
+import me.neoblade298.neocore.bukkit.io.IOComponent;
+import me.neoblade298.neocore.bukkit.player.PlayerFields;
 
 public class StorageManager implements IOComponent, Listener, Manager {
 	static HashMap<UUID, HashMap<Integer, Integer>> storages = new HashMap<UUID, HashMap<Integer, Integer>>();

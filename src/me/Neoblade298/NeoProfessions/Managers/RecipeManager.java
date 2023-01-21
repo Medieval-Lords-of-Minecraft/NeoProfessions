@@ -45,10 +45,10 @@ import me.Neoblade298.NeoProfessions.Recipes.ResearchRequirement;
 import me.Neoblade298.NeoProfessions.Recipes.ShardResult;
 import me.Neoblade298.NeoProfessions.Recipes.StoredItemResult;
 import me.Neoblade298.NeoProfessions.Storage.StoredItemInstance;
-import me.neoblade298.neocore.NeoCore;
-import me.neoblade298.neocore.exceptions.NeoIOException;
-import me.neoblade298.neocore.io.FileLoader;
-import me.neoblade298.neocore.io.IOComponent;
+import me.neoblade298.neocore.bukkit.NeoCore;
+import me.neoblade298.neocore.shared.exceptions.NeoIOException;
+import me.neoblade298.neocore.shared.io.FileLoader;
+import me.neoblade298.neocore.bukkit.io.IOComponent;
 
 public class RecipeManager implements IOComponent, Listener, Manager {
 	Professions main;

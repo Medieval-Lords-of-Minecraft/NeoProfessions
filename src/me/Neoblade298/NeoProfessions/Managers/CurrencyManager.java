@@ -25,7 +25,7 @@ import de.tr7zw.nbtapi.NBTItem;
 import me.Neoblade298.NeoProfessions.Professions;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.Utilities.Util;
-import me.neoblade298.neocore.io.IOComponent;
+import me.neoblade298.neocore.bukkit.io.IOComponent;
 
 public class CurrencyManager implements IOComponent, Listener, Manager {
 	// UUID, essence/oretype, amount

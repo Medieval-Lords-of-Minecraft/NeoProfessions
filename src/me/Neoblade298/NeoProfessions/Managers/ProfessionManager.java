@@ -14,7 +14,7 @@ import me.Neoblade298.NeoProfessions.Professions;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.PlayerProfessions.Profession;
 import me.Neoblade298.NeoProfessions.PlayerProfessions.ProfessionType;
-import me.neoblade298.neocore.io.IOComponent;
+import me.neoblade298.neocore.bukkit.io.IOComponent;
 
 public class ProfessionManager implements IOComponent, Manager {
 	static Professions main;

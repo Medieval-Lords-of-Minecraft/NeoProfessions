@@ -22,7 +22,7 @@ import me.Neoblade298.NeoProfessions.Managers.*;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.Objects.Rarity;
 import me.Neoblade298.NeoProfessions.PlayerProfessions.ProfessionType;
-import me.neoblade298.neocore.io.IOManager;
+import me.neoblade298.neocore.bukkit.io.IOManager;
 import net.milkbowl.vault.economy.Economy;
 
 public class Professions extends JavaPlugin implements Listener {

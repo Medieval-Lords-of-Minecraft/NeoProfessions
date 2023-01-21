@@ -19,7 +19,7 @@ import me.Neoblade298.NeoProfessions.Managers.AugmentManager;
 import me.Neoblade298.NeoProfessions.Objects.StoredAttributes;
 
 public class SpectreAugment extends Augment implements ModSkillCastAugment {
-	private static int manaRegen = (int) AugmentManager.getValue("spectre.mana-regen");
+	private static int resourceRegen = (int) AugmentManager.getValue("spectre.resource-regen");
 	private static int healthRegen = (int) AugmentManager.getValue("spectre.health-regen");
 	
 	public SpectreAugment() {
@@ -44,7 +44,7 @@ public class SpectreAugment extends Augment implements ModSkillCastAugment {
 		FlagManager.addFlag(user, user, "aug_spectre", 400);
 		StoredAttributes attr = new StoredAttributes();
 		attr.setAttribute("healthregen", healthRegen);
-		attr.setAttribute("resourceregen", manaRegen);
+		attr.setAttribute("resourceregen", resourceRegen);
 		Augment aug = this;
 		new BukkitRunnable() {
 			public void run() {
@@ -77,8 +77,8 @@ public class SpectreAugment extends Augment implements ModSkillCastAugment {
 		List<String> lore = meta.getLore();
 		lore.add("§7Casting any non-shift skill grants");
 		lore.add("§7invisibility for 3s. During that");
-		lore.add("§7time, gain " + formatPercentage(manaRegen) + "% §7mana regen and");
-		lore.add("§7" + formatPercentage(healthRegen) + "% §7health regen.");
+		lore.add("§7time, gain " + formatPercentage(resourceRegen * 0.01) + "% §7resource regen and");
+		lore.add("§7" + formatPercentage(healthRegen * 0.1) + "% §7health regen.");
 		meta.setLore(lore);
 		item.setItemMeta(meta);
 		return item;

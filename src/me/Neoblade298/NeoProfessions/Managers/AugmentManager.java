@@ -45,7 +45,7 @@ import me.Neoblade298.NeoProfessions.Objects.FlagSettings;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.Utilities.Util;
 import me.neoblade298.neocore.bukkit.NeoCore;
-import me.neoblade298.neocore.shared.io.FileLoader;
+import me.neoblade298.neocore.bukkit.io.FileLoader;
 import me.neoblade298.neomythicextension.events.ChestDropEvent;
 import me.neoblade298.neomythicextension.events.MythicResearchPointsChanceEvent;
 import me.neoblade298.neorelics.NeoRelics;

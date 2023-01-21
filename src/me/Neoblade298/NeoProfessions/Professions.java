@@ -22,7 +22,7 @@ import me.Neoblade298.NeoProfessions.Managers.*;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.Objects.Rarity;
 import me.Neoblade298.NeoProfessions.PlayerProfessions.ProfessionType;
-import me.neoblade298.neocore.bukkit.io.IOManager;
+import me.neoblade298.neocore.bukkit.NeoCore;
 import net.milkbowl.vault.economy.Economy;
 
 public class Professions extends JavaPlugin implements Listener {
@@ -82,7 +82,7 @@ public class Professions extends JavaPlugin implements Listener {
 		sm = new StorageManager(this);
 		getServer().getPluginManager().registerEvents(sm, this);
 		managers.add(sm);
-		IOManager.register(this, sm, "StorageManager");
+		NeoCore.registerIOComponent(this, sm, "StorageManager");
 			
 		if (!isInstance) {
 			// Managers and listeners
@@ -100,10 +100,10 @@ public class Professions extends JavaPlugin implements Listener {
 			getServer().getPluginManager().registerEvents(cm, this);
 			getServer().getPluginManager().registerEvents(rm, this);
 			getServer().getPluginManager().registerEvents(mim, this);
-			IOManager.register(this, cm, "EssenceManager");
-			IOManager.register(this, pm, "ProfessionManager");
-			IOManager.register(this, rm, "RecipeManager");
-			IOManager.register(this, gm, "GardenManager");
+			NeoCore.registerIOComponent(this, cm, "EssenceManager");
+			NeoCore.registerIOComponent(this, pm, "ProfessionManager");
+			NeoCore.registerIOComponent(this, rm, "RecipeManager");
+			NeoCore.registerIOComponent(this, gm, "GardenManager");
 	
 			// Command listeners for all classes
 			this.getCommand("ebal").setExecutor(new EssenceBalanceCommand(this));

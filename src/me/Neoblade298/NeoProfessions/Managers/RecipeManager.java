@@ -47,7 +47,7 @@ import me.Neoblade298.NeoProfessions.Recipes.StoredItemResult;
 import me.Neoblade298.NeoProfessions.Storage.StoredItemInstance;
 import me.neoblade298.neocore.bukkit.NeoCore;
 import me.neoblade298.neocore.shared.exceptions.NeoIOException;
-import me.neoblade298.neocore.shared.io.FileLoader;
+import me.neoblade298.neocore.bukkit.io.FileLoader;
 import me.neoblade298.neocore.bukkit.io.IOComponent;
 
 public class RecipeManager implements IOComponent, Listener, Manager {

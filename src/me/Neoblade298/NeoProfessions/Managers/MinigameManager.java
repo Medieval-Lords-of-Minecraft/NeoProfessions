@@ -30,7 +30,7 @@ import me.Neoblade298.NeoProfessions.PlayerProfessions.ProfessionType;
 import me.Neoblade298.NeoProfessions.Storage.StoredItem;
 import me.neoblade298.neocore.bukkit.NeoCore;
 import me.neoblade298.neocore.shared.exceptions.NeoIOException;
-import me.neoblade298.neocore.shared.io.FileLoader;
+import me.neoblade298.neocore.bukkit.io.FileLoader;
 
 public class MinigameManager implements Listener, Manager {
 	public static Professions main;

@@ -8,7 +8,8 @@ import org.bukkit.inventory.ItemStack;
 
 import de.tr7zw.nbtapi.NBTItem;
 import me.Neoblade298.NeoProfessions.Professions;
-import me.neoblade298.neocore.util.Util;
+import me.neoblade298.neocore.bukkit.util.BukkitUtil;
+
 
 public class ValueCommand implements CommandExecutor {
 	Professions main;
@@ -26,7 +27,7 @@ public class ValueCommand implements CommandExecutor {
 					item.getItemMeta().getDisplayName() : item.getType().name();
 
 			if (item == null || item.getType().isAir()) {
-				Util.msg(sender, "&cYou're not holding anything!");
+				BukkitUtil.msg(sender, "&cYou're not holding anything!");
 				return true;
 			}
 
@@ -39,7 +40,7 @@ public class ValueCommand implements CommandExecutor {
 			else {
 				value = nbti.getDouble("value");
 			}
-			Util.msg(sender, "&7Value of &c" + display + "&7: &e" + value + "g");
+			BukkitUtil.msg(sender, "&7Value of &c" + display + "&7: &e" + value + "g");
 			return true;
 		}
 		return false;

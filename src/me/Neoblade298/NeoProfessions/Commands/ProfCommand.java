@@ -36,6 +36,7 @@ import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.PlayerProfessions.Profession;
 import me.Neoblade298.NeoProfessions.PlayerProfessions.ProfessionType;
 import me.Neoblade298.NeoProfessions.Utilities.Util;
+import me.neoblade298.neocore.bukkit.NeoCore;
 import me.neoblade298.neogear.listeners.DurabilityListener;
 
 public class ProfCommand implements CommandExecutor {
@@ -74,6 +75,10 @@ public class ProfCommand implements CommandExecutor {
 			return true;
 		}
 		else if (args.length == 1 && args[0].equalsIgnoreCase("inspect")) {
+			if (!NeoCore.isLoaded(p)) {
+				Util.sendMessage(p, "&cYou're not loaded in yet! Try again in a moment!");
+				return true;
+			}
 			ItemStack item = p.getInventory().getItemInMainHand();
 			if (item != null && !item.getType().isAir() && item.hasItemMeta()) {
 				if(new NBTItem(item).hasKey("version")) {

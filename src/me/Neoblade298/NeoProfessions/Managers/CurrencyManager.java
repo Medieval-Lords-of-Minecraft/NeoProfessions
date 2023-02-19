@@ -12,6 +12,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Sound;
+import org.bukkit.block.Container;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -192,6 +193,9 @@ public class CurrencyManager implements IOComponent, Listener, Manager {
 			return;
 		}
 		if (!e.getHand().equals(EquipmentSlot.HAND)) {
+			return;
+		}
+		if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getState() instanceof Container) {
 			return;
 		}
 

@@ -15,6 +15,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Sound;
+import org.bukkit.block.Container;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -284,6 +285,9 @@ public class RecipeManager implements IOComponent, Listener, Manager {
 			return;
 		}
 		if (!e.getHand().equals(EquipmentSlot.HAND)) {
+			return;
+		}
+		if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getState() instanceof Container) {
 			return;
 		}
 

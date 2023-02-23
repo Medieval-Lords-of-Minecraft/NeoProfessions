@@ -17,7 +17,6 @@ import me.Neoblade298.NeoProfessions.Commands.*;
 import me.Neoblade298.NeoProfessions.Inventories.ProfessionInventory;
 import me.Neoblade298.NeoProfessions.Listeners.BoostListener;
 import me.Neoblade298.NeoProfessions.Listeners.InventoryListeners;
-import me.Neoblade298.NeoProfessions.Listeners.PartyListeners;
 import me.Neoblade298.NeoProfessions.Managers.*;
 import me.Neoblade298.NeoProfessions.Objects.Manager;
 import me.Neoblade298.NeoProfessions.Objects.Rarity;
@@ -74,9 +73,6 @@ public class Professions extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(new InventoryListeners(this), this); // Repairs
 		getServer().getPluginManager().registerEvents(new AugmentManager(this), this); // Working augments
 		getServer().getPluginManager().registerEvents(new BoostListener(), this); // Exp mults
-		if (Bukkit.getPluginManager().isPluginEnabled("mcMMO")) {
-			getServer().getPluginManager().registerEvents(new PartyListeners(this), this);
-		}
 		
 		// StorageManager works in instances
 		sm = new StorageManager(this);
